@@ -39,7 +39,8 @@
     "jest": "^27.4.5",
     "jest-sonar-reporter": "^2.0.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "supertest": "^6.2.3"
   },
   "pre-commit": [
     "lint"
@@ -51,7 +52,11 @@
     ],
     "coverageThreshold": {
       "global": {
+<<<<<<< HEAD
         "lines": 5
+=======
+        "lines": 80
+>>>>>>> 547fbdbb6e33e1aa6049b92b77bd3cf46546e308
       }
     },
     "testResultsProcessor": "jest-sonar-reporter"
@@ -60,6 +65,7 @@
     "body-parser": "^1.20.0",
     "consign": "^0.1.6",
     "express": "^4.17.3",
+    "moment": "^2.29.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "node-fetch": "^2.6.7",
