@@ -14,29 +14,19 @@ class Tabelas {
       id INT AUTO_INCREMENT NOT NULL, 
       nome varchar(100) NOT NULL, 
       urlFotoPerfil text, 
-      
-      --dados pessoais do usuario
       nomeCompleto varchar(100), 
       dataNascimento date, 
       rg varchar(20), 
       cpf varchar(11), 
-      
-      -- contatos 
       telefone varchar(11), 
       celular varchar(11), 
       email varchar(50), 
-      
-      -- password 
       senha varchar(50), 
-      
-      -- endereco 
       cep varchar(8), 
       endereco varchar(100), 
       numero int, 
       complemento varchar(100), 
       bairro varchar(100), 
-      
-      -- endereço
       UNIQUE (nome),  
       PRIMARY KEY(id))`;
 
