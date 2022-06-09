@@ -7,7 +7,7 @@ jest.mock("../src/repositorios/tipoVenda");
 
 describe("API Tipos de Vendas", () => {
   test("Listar Tipos de vendas", async () => {
-    const resp = await request.get("/tipos-vendas");
+    const resp = await request.get("/tipos-venda");
     expect(resp.statusCode).toBe(200);
     expect(resp.body).toEqual([
       {
@@ -26,7 +26,7 @@ describe("API Tipos de Vendas", () => {
   });
 
   test("Adicionar tipo de vendas com Dados Válidos", async () => {
-    const resp = await request.post("/tipos-vendas").send({
+    const resp = await request.post("/tipos-venda").send({
       id: 4,
       descricao: "infantil",
     });
@@ -38,7 +38,7 @@ describe("API Tipos de Vendas", () => {
   });
 
   test("Listar tipo de Venda por Id", async () => {
-    const resp = await request.get("/tipos-vendas/1");
+    const resp = await request.get("/tipos-venda/1");
     expect(resp.statusCode).toBe(200);
     expect(resp.body).toEqual({
       id: 1,
@@ -47,7 +47,7 @@ describe("API Tipos de Vendas", () => {
   });
 
   test("Alterar tipo de venda com dados Válidos", async () => {
-    const resp = await request.put("/tipos-vendas/1").send({
+    const resp = await request.put("/tipos-venda/1").send({
       id: 1,
       descricao: "Bebidas sem Alcool",
     });
@@ -59,7 +59,7 @@ describe("API Tipos de Vendas", () => {
   });
 
   test("Excluir Tipo de venda com id existente", async () => {
-    const resp = await request.delete("/tipos-vendas/1");
+    const resp = await request.delete("/tipos-venda/1");
     expect(resp.statusCode).toBe(200);
   });
 
