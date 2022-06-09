@@ -20,7 +20,7 @@ class Usuarios {
         usuario.nome
       );
 
-      if (!nomeJaUtilizado) {
+      if (!nomeJaUtilizado && !nomeJaUtilizado.length > 0) {
         nomeEhValido = true;
       }
     }
