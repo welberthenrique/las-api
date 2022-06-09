@@ -22,7 +22,7 @@ class Eventos {
     ];
 
     if (!dataEhValida) {
-      return new Promise.reject(validacoes[0]);
+      return Promise.reject(validacoes[0]);
     } else {
       return repositorio.adicionar(evento);
     }
@@ -45,8 +45,6 @@ class Eventos {
   }
 
   isDatasValidas({ dataInicio, dataFim }) {
-    //Obter a data atual - var now = moment();
-    //var day = moment("1995-12-25")
     const day = moment().format("YYYY-MM-DD");
     const objDataInicio = moment(dataInicio).format("YYYY-MM-DD");
     const objDataFim = moment(dataFim).format("YYYY-MM-DD");
