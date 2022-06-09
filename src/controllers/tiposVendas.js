@@ -1,20 +1,20 @@
 const TipoVenda = require("../models/tiposVendas");
 
 module.exports = (app) => {
-  app.get("/tipos-vendas", (_req, res, next) => {
+  app.get("/tipos-venda", (_req, res, next) => {
     TipoVenda.listar()
       .then((resultados) => res.json(resultados))
       .catch((erros) => next(erros));
   });
 
-  app.get("/tipos-vendas/:id", (req, res, next) => {
+  app.get("/tipos-venda/:id", (req, res, next) => {
     const id = parseInt(req.params.id);
     TipoVenda.buscarPorId(id)
       .then((resultados) => res.json(resultados))
       .catch((erros) => next(erros));
   });
 
-  app.post("/tipos-vendas", (req, res, next) => {
+  app.post("/tipos-venda", (req, res, next) => {
     const tiposVendas = req.body;
     TipoVenda.adicionar(tiposVendas)
       .then((resultados) =>
@@ -23,7 +23,7 @@ module.exports = (app) => {
       .catch((erros) => next(erros));
   });
 
-  app.put("/tipos-vendas/:id", (req, res, next) => {
+  app.put("/tipos-venda/:id", (req, res, next) => {
     const id = parseInt(req.params.id);
     const valores = req.body;
     TipoVenda.alterar(id, valores)
@@ -31,7 +31,7 @@ module.exports = (app) => {
       .catch((erros) => next(erros));
   });
 
-  app.delete("/tipos-vendas/:id", (req, res, next) => {
+  app.delete("/tipos-venda/:id", (req, res, next) => {
     const id = parseInt(req.params.id);
     TipoVenda.excluir(id)
       .then((resultado) =>
