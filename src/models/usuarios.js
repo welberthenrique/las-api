@@ -42,7 +42,7 @@ class Usuarios {
     const existemErros = erros.length;
 
     if (existemErros) {
-      throw { erroApp: erros };
+      return Promise.reject(erros);
     } else {
       const resp = await repositorio.adicionar(usuario);
       return { id: resp.insertId, ...usuario };
