@@ -14,11 +14,12 @@ module.exports = (app) => {
       .catch((erros) => next(erros));
   });
 
-  app.post("/usuarios", (req, res, next) => {
+  app.post("/usuarios", (req, res) => {
     const usuarios = req.body;
     Usuario.adicionar(usuarios)
       .then((resultados) => res.status(201).json(resultados))
-      .catch((erros) => next(erros));
+      //.catch((erros) => next(erros));
+      .catch((erros) => res.status(400).json(erros));
   });
 
   app.put("/usuarios/:id", (req, res, next) => {
