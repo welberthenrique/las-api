@@ -22,7 +22,7 @@ class Eventos {
     ];
 
     if (!dataEhValida) {
-      return new Promise((_resolve, reject) => reject(validacoes[0]));
+      return new Promise.reject(validacoes[0]);
     } else {
       return repositorio.adicionar(evento);
     }

@@ -48,10 +48,7 @@ class Usuario {
   async isNomeUsuarioUtilizado(nome) {
     const sql = "SELECT * FROM Usuarios WHERE nome = ?";
     return query(sql, nome).then((data) => {
-      if (data.length > 0) {
-        return true;
-      }
-      return false;
+      return data.length > 0;
     });
   }
 

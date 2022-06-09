@@ -32,7 +32,9 @@ module.exports = (app) => {
   app.delete("/usuarios/:id", (req, res, next) => {
     const id = parseInt(req.params.id);
     Usuario.excluir(id)
-      .then((id) => (id ? res.status(204).end() : res.status(404).end()))
+      .then((resultados) =>
+        resultados ? res.status(204).end() : res.status(404).end()
+      )
       .catch((erros) => next(erros));
   });
 
