@@ -12,7 +12,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "https://fierce-eyrie-44746.herokuapp.com",
+  "host": "fierce-eyrie-44746.herokuapp.com",
   "basePath": "/",
   "tags": [
     {
@@ -52,7 +52,7 @@
       "description": "Operações com documento do usuário"
     }
   ],
-  "schemes": ["http"],
+  "schemes": ["https"],
   "paths": {
     "/usuarios": {
       "get": {
