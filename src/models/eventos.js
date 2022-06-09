@@ -21,11 +21,8 @@ class Eventos {
       },
     ];
 
-    // const erros = validacoes.filter((campo) => !campo.valido);
-    // const existemErros = erros.length;
-
     if (!dataEhValida) {
-      return new Promise((resolve, reject) => reject(validacoes[0]));
+      return new Promise((_resolve, reject) => reject(validacoes[0]));
     } else {
       return repositorio.adicionar(evento);
     }

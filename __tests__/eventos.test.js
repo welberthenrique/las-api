@@ -117,8 +117,6 @@ describe("API Eventos", () => {
   test("Excluir Evento id existente", async () => {
     const resp = await request.delete("/eventos/1");
     expect(resp.statusCode).toBe(200);
-    //expect(resp.body).toEqual({ id: 4 });
-    //expect(resp.statusCode).toBe(404);
   });
 
   test("Deletar Evento com ID Inexistente", async () => {

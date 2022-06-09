@@ -17,9 +17,6 @@ class Usuario {
   }
 
   excluir(id) {
-    //contatosMock[id - 1] ? contatosMock[id - 1] : []
-    // return Promise.resolve(usuariosMock[id - 1] ? usuariosMock[id - 1].id : []);
-    //return repositorio.excluir(id);
     return Promise.resolve(usuariosMock.find((usuario) => usuario.id == id));
   }
 
@@ -48,7 +45,7 @@ class Usuario {
   }
 
   // eslint-disable-next-line no-unused-vars
-  atualizarDadosPessoais(id, dadosPessoaisAlterado) {
+  atualizarDadosPessoais(id, _dadosPessoaisAlterado) {
     return Promise.resolve(dadosPessoaisMock[id - 1] && { ...id });
   }
 
@@ -59,7 +56,7 @@ class Usuario {
   }
 
   // eslint-disable-next-line no-unused-vars
-  alterarContatos(id, dadosPessoaisAlterado) {
+  alterarContatos(id, _dadosPessoaisAlterado) {
     return Promise.resolve(contatosMock[id - 1] && { ...id });
   }
 
@@ -76,7 +73,7 @@ class Usuario {
   }
 
   // eslint-disable-next-line no-unused-vars
-  alterarEndereco(id, enderecoAlterado) {
+  alterarEndereco(id, _enderecoAlterado) {
     return Promise.resolve(enderecoMock[id - 1] && { ...id });
   }
 }

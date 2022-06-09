@@ -61,8 +61,6 @@ describe("API Tipos de Vendas", () => {
   test("Excluir Tipo de venda com id existente", async () => {
     const resp = await request.delete("/tipos-vendas/1");
     expect(resp.statusCode).toBe(200);
-    //expect(resp.body).toEqual({ id: 4 });
-    //expect(resp.statusCode).toBe(404);
   });
 
   test("Deletar Tipo de venda com ID Inexistente", async () => {

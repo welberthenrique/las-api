@@ -1,7 +1,5 @@
-//const { response } = require("express");
 const fetch = require("node-fetch");
 const repositorio = require("../repositorios/usuario");
-//const moment = require("moment");
 
 class Usuarios {
   listar() {
@@ -46,15 +44,6 @@ class Usuarios {
     if (existemErros) {
       throw { erroApp: erros };
     } else {
-      // const sql = "INSERT INTO Usuarios SET ?";
-
-      // pool.query(sql, usuario, (erro) => {
-      //   if (erro) {
-      //     next(erro);
-      //   } else {
-      //     res.status(201).json(usuario);
-      //   }
-      // });
       const resp = await repositorio.adicionar(usuario);
       return { id: resp.insertId, ...usuario };
     }
@@ -75,7 +64,7 @@ class Usuarios {
   async isURLValida(url) {
     try {
       const regex =
-        /https?:\/\/(www.)?[-a-zA-Z0-9@:%.+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%+.~#?&//=]*)/gm;
+        /https?:\/\/(www.)?[-a-zA-Z0-9@:%.+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%+.~#?&/=]*)/gm;
       const verificaUrl = url.match(regex);
       if (!verificaUrl) {
         return false;
@@ -83,9 +72,8 @@ class Usuarios {
       const response = await fetch(url);
       if (response.status !== 200) {
         return false;
-      } else {
-        return true;
       }
+      return true;
     } catch {
       return false;
     }

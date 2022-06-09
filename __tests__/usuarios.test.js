@@ -158,8 +158,6 @@ describe("API de usuários", () => {
   test("Excluir usuário existente", async () => {
     const resp = await request.delete("/usuarios/4");
     expect(resp.statusCode).toBe(204);
-    //expect(resp.body).toEqual({ id: 4 });
-    //expect(resp.statusCode).toBe(404);
   });
 
   test("Deletar Usuários com ID Inexistente", async () => {

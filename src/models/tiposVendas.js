@@ -1,5 +1,4 @@
 const repositorio = require("../repositorios/tipoVenda");
-//const moment = require("moment");
 
 class TiposVendas {
   listar() {
